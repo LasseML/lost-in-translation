@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom'
 
-
-const ProfileButton = () => {
+const Button = ({ color, text, onClick }) => {
     return (
-     <div>
-         <Link to='/profile'>{ sessionStorage.getItem('userName')}'s Profile</Link>
-     </div>
+        <button onClick={onClick} style={{ backgroundColor: color }}
+            className='btn'>
+            {text}
+        </button>
     )
 }
 
-export default ProfileButton
+Button.defaulProps = {
+    color: 'pink'
+}
+
+export default Button
