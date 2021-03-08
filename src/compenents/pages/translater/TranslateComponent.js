@@ -18,13 +18,15 @@ function TranslateComponent() {
     const changePage = () => {
         history.push('/profile')
     }
-  return (
-    <div className="container">
-      <Button color='green' text={buttonText} onClick={changePage} />
-      <TranslateInput inputString={onTranslate}/>
-      <SignTranslater stringToTranslate={translate} />
-    </div>
-  );
+
+    const buttonText = sessionStorage.getItem('userName')
+    return (
+        <div className="container">
+            <Button color='green' text={buttonText} onClick={changePage} />
+            <TranslateInput inputString={onTranslate}/>
+            <SignTranslater stringToTranslate={translate} />
+        </div>
+    );
 }
 
 export default TranslateComponent;
