@@ -1,7 +1,9 @@
 import Button from "../../globalLayoutComponents/Button";
 import { useState } from 'react'
 
-
+const divStyle = {
+    margin: '15px',
+};
 
 const ProfilePage = ({ history }) => {
     const [arr, setArr] = useState(JSON.parse(sessionStorage.getItem('transArr')))
@@ -25,16 +27,17 @@ const ProfilePage = ({ history }) => {
         <div className='container'>
             <h2 className='profile-header'>PROFILE PAGE</h2>
             <div className='username-actions'>
-                <h3>User name: {user}</h3>
+                <h3 style={divStyle}>User name: {user}</h3>
                 <Button text='Erase translations' onClick={deleteTranslations} />
                 <Button text='Logout' onClick={logout} />
+
+            <h4 style={divStyle}>Translated items:</h4>
+            <>
+                {arr.map((transItem) => (<p style={divStyle} key={transItem}>{transItem}</p>))}
+            </>
+                <Button style={divStyle} text='Back' onClick={goBack} />
             </div>
 
-            <h4>Translated items:</h4>
-            <>
-                {arr.map((transItem) => (<p key={transItem}>{transItem}</p>))}
-            </>
-            <Button text='Back' onClick={goBack} />
         </div>
     )
 
