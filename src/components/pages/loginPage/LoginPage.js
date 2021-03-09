@@ -3,7 +3,11 @@ import { withRouter } from 'react-router-dom'
 
 const LoginPage = ({ history }) => {
     const [text, setText] = useState('')
-
+/*
+* onSubmit makes 2 actions:
+* Stores user name and a translation array in session storage
+* Changes the view to the next page
+*/
     const onSubmit =(e) => {
         e.preventDefault()
         if (!text) {
