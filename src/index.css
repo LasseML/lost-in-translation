@@ -18,6 +18,17 @@ body {
   border-radius: 5px;
 }
 
+.profile-header {
+  text-align: center;
+  margin: 20px;
+}
+
+.username-actions {
+  margin: 20px;
+  text-align: center;
+  table-layout: fixed;
+}
+
 
 .btn {
   display: inline-block;
@@ -42,6 +53,15 @@ body {
   box-sizing: border-box;
 }
 
+.form-input {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
@@ -53,11 +73,11 @@ input[type=text] {
   display: block;
   max-width: 500px;
   margin: 20px auto;
-  overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .sign{
@@ -70,6 +90,7 @@ input[type=text] {
   display:table-cell;
   text-align: center;
   vertical-align: middle;
+  overflow-wrap:break-word;
 }
 
 ul {

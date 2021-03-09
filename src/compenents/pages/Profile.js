@@ -20,11 +20,14 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <h2>PROFILE PAGE</h2>
-            <h3>User name: {user}</h3>
-            <Button text='Logout' onClick={logout} />
-            <Button text='Erase translations' onClick={deleteTranslations} />
+        <div className='container'>
+            <h2 className='profile-header'>PROFILE PAGE</h2>
+            <div className='username-actions'>
+                <h3>User name: {user}</h3>
+                <Button text='Erase translations' onClick={deleteTranslations} />
+                <Button text='Logout' onClick={logout} />
+            </div>
+
             <h4>Translated items:</h4>
             <>
                 {arr.map((transItem) => (<p key={transItem}>{transItem}</p>))}

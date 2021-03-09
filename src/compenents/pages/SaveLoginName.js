@@ -18,14 +18,15 @@ const SaveLoginName = ({ onSave, history }) => {
     }
 
     return (
-        <form className='save-login' onSubmit={onSubmit}>
-            <div className='name-box'>
-                <label>Name</label>
-                <input type='text' placeholder='Write your name' value ={text} onChange={(e) => setText(e.target.value)}/>
-            </div>
-
-            <input type='submit' value='Login' />
-        </form>
+        <div className="container">
+            <form className='form-input' onSubmit={onSubmit}>
+                <div className='name-box'>
+                    <label>Please login to continue</label>
+                    <input type='text' placeholder='Write your name' value ={text} onChange={(e) => setText(e.target.value)}/>
+                </div>
+                <input className='btn' type='submit' value='Login' />
+            </form>
+        </div>
     )
 }
 
