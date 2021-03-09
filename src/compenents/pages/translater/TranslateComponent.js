@@ -2,18 +2,27 @@ import {useState} from 'react'
 import SignTranslater from './SignTranslater'
 import TranslateInput from './TranslateInput'
 import Button from "../../Button";
-import {useHistory} from "react-router-dom";
 
 
 
 
-function TranslateComponent() {
+function TranslateComponent({ history }) {
     const [translate, setTranslate] = useState('')
 
-    const onTranslate =(textToTranslate) => {
+    const onTranslate = (textToTranslate) => {
+        const translateHistory = JSON.parse(sessionStorage.getItem('transArr'))
+        const index = translateHistory.indexOf(textToTranslate)
+        if (index > -1) {
+            translateHistory.splice(index, 1)
+        }
+        translateHistory.unshift(textToTranslate.toUpperCase())
+        if (translateHistory.length > 10){
+            translateHistory.pop()
+        }
+        sessionStorage.setItem("transArr", JSON.stringify(translateHistory))
+
         setTranslate(textToTranslate)
     }
-    const history = useHistory()
 
     const changePage = () => {
         history.push('/profile')
@@ -22,7 +31,7 @@ function TranslateComponent() {
     const buttonText = sessionStorage.getItem('userName')
     return (
         <div className="container">
-            <Button color='green' text={buttonText} onClick={changePage} />
+            <Button color='green' text={buttonText + 's profile'} onClick={changePage} />
             <TranslateInput inputString={onTranslate}/>
             <SignTranslater stringToTranslate={translate} />
         </div>
