@@ -1,9 +1,9 @@
 import Button from "../Button";
-import { useState } from 'react'
+import { useState } from 'react';
 
 
 
-const Profile = () => {
+const Profile = ({ history }) => {
     const [arr, setArr] = useState(JSON.parse(sessionStorage.getItem('transArr')))
     let user = sessionStorage.getItem('userName')
 
@@ -18,6 +18,9 @@ const Profile = () => {
         console.log(sessionStorage.getItem('transArr'))
     }
 
+    const goBack = () => {
+        history.push('/translate')
+    }
 
     return (
         <div>
@@ -29,6 +32,7 @@ const Profile = () => {
             <>
                 {arr.map((transItem) => (<p key={transItem}>{transItem}</p>))}
             </>
+            <Button text='Back' onClick={goBack} />
         </div>
     )
 

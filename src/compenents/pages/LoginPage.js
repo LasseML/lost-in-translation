@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
-const SaveLoginName = ({ onSave, history }) => {
+const SaveLoginName = ({ history }) => {
     const [text, setText] = useState('')
 
     const onSubmit =(e) => {
