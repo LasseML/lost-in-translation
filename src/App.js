@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import SaveLoginName from "./compenents/pages/SaveLoginName"
+import LoginPage from "./compenents/pages/LoginPage"
 import Profile from "./compenents/pages/Profile"
 import PrivateRoute from "./compenents/PrivateRoute"
 import TranslateComponent from "./compenents/pages/translater/TranslateComponent";
@@ -11,7 +11,7 @@ function App() {
         <Router>
             {/*<AppHeader />*/}
             <Switch>
-                <Route path='/' exact component={SaveLoginName} />
+                <Route path='/' exact component={LoginPage} />
                 <PrivateRoute path='/translate' component={TranslateComponent} />
                 <PrivateRoute path='/profile' component={Profile} />
             </Switch>

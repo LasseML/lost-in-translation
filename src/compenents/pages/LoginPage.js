@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 
-const SaveLoginName = ({ onSave, history }) => {
+const LoginPage = ({ history }) => {
     const [text, setText] = useState('')
 
     const onSubmit =(e) => {
@@ -30,4 +30,4 @@ const SaveLoginName = ({ onSave, history }) => {
     )
 }
 
-export default withRouter(SaveLoginName)
+export default withRouter(LoginPage)
