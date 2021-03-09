@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 
-const Profile = () => {
+const Profile = ({ history }) => {
     const [arr, setArr] = useState(JSON.parse(sessionStorage.getItem('transArr')))
     let user = sessionStorage.getItem('userName')
 
@@ -15,9 +15,11 @@ const Profile = () => {
         const eraseArr = []
         setArr(arr => [])
         sessionStorage.setItem('transArr', JSON.stringify(eraseArr))
-        console.log(sessionStorage.getItem('transArr'))
     }
 
+    const goBack = () => {
+        history.push('/translate')
+    }
 
     return (
         <div className='container'>
@@ -32,6 +34,7 @@ const Profile = () => {
             <>
                 {arr.map((transItem) => (<p key={transItem}>{transItem}</p>))}
             </>
+            <Button text='Back' onClick={goBack} />
         </div>
     )
 
