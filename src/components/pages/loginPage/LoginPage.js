@@ -15,6 +15,7 @@ const LoginPage = ({ history }) => {
         sessionStorage.setItem("transArr", JSON.stringify(transArr))
         setText('')
         history.push('/translate')
+        window.location.reload(false)
     }
 
     return (

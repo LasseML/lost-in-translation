@@ -7,7 +7,8 @@ const divStyle = {
 
 const AppHeader = () => {
     const history = useHistory()
-    const buttonText = sessionStorage.getItem('userName') + "'s ProfilePage"
+    const session = sessionStorage.getItem('userName')
+    let isLoggedIn = !(session === null)
     const changePage = () => {
         history.push('/profile')
     }
@@ -16,9 +17,10 @@ const AppHeader = () => {
         <div className='nav-bar'>
             <ul>
                 <li><h3>Translate App!</h3></li>
-                <li style={divStyle}>
-                    <Button text={buttonText} onClick={changePage} />
-                </li>
+                {isLoggedIn
+                    ?  <li style={divStyle}> <Button text={"Your Profile"} onClick={changePage} /></li>
+                    :<></>
+                    }
             </ul>
         </div>
     )
