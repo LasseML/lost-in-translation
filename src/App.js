@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import LoginPage from "./compenents/pages/LoginPage"
-import Profile from "./compenents/pages/Profile"
-import PrivateRoute from "./compenents/PrivateRoute"
-import AppHeader from "./compenents/AppHeader"
-import TranslateComponent from "./compenents/pages/translater/TranslateComponent";
+import LoginPage from "./components/pages/loginPage/LoginPage"
+import ProfilePage from "./components/pages/profilePage/ProfilePage"
+import PrivateRoute from "./components/routing/PrivateRoute"
+import AppHeader from "./components/globalLayoutComponents/AppHeader"
+import TranslatePage from "./components/pages/translatePage/TranslatePage";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
             {<AppHeader />}
             <Switch>
                 <Route path='/' exact component={LoginPage} />
-                <PrivateRoute path='/translate' component={TranslateComponent} />
-                <PrivateRoute path='/profile' component={Profile} />
+                <PrivateRoute path='/translate' component={TranslatePage} />
+                <PrivateRoute path='/profile' component={ProfilePage} />
             </Switch>
         </Router>
     </div>

@@ -1,12 +1,12 @@
 import {useState} from 'react'
 import SignTranslater from './SignTranslater'
 import TranslateInput from './TranslateInput'
-import Button from "../../Button";
+import Button from "../../globalLayoutComponents/Button";
 
 
 
 
-function TranslateComponent({ history }) {
+function TranslatePage({ history }) {
     const [translate, setTranslate] = useState('')
 
     const onTranslate =(textToTranslate) => {
@@ -38,4 +38,4 @@ function TranslateComponent({ history }) {
     );
 }
 
-export default TranslateComponent;
+export default TranslatePage;

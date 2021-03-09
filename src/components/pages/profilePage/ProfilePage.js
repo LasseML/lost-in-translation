@@ -1,9 +1,9 @@
-import Button from "../Button";
+import Button from "../../globalLayoutComponents/Button";
 import { useState } from 'react'
 
 
 
-const Profile = ({ history }) => {
+const ProfilePage = ({ history }) => {
     const [arr, setArr] = useState(JSON.parse(sessionStorage.getItem('transArr')))
     let user = sessionStorage.getItem('userName')
 
@@ -40,4 +40,4 @@ const Profile = ({ history }) => {
 
 }
 
-export default Profile
+export default ProfilePage

@@ -7,7 +7,7 @@ const divStyle = {
 
 const AppHeader = () => {
     const history = useHistory()
-    const buttonText = sessionStorage.getItem('userName') + "'s Profile"
+    const buttonText = sessionStorage.getItem('userName') + "'s ProfilePage"
     const changePage = () => {
         history.push('/profile')
     }
